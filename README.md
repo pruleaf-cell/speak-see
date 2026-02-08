@@ -15,7 +15,7 @@ Disk:
 ## One-Command Startup
 
 ```bash
-bash "/Users/gray/Documents/Speak>>See/run.sh"
+bash ./run.sh
 ```
 
 First run will:
@@ -58,7 +58,7 @@ Set environment variables before running:
 ```bash
 SPEAKSEE_SD_MODEL="runwayml/stable-diffusion-v1-5" \
 SPEAKSEE_WHISPER_MODEL="Systran/faster-whisper-small" \
-bash "/Users/gray/Documents/Speak>>See/run.sh"
+bash ./run.sh
 ```
 
 Notes:
@@ -89,7 +89,7 @@ Useful overrides:
 - Server logs are written to `data/logs/server.log`.
 
 ## Manual Acceptance Test
-1. Start the app: `bash "/Users/gray/Documents/Speak>>See/run.sh"`
+1. Start the app: `bash ./run.sh`
 2. Open the page and say: `a lighthouse on a cliff at sunrise` (Auto listen is on by default)
 3. Confirm the **Live transcript** updates while speaking.
 4. Stop speaking and wait for **Auto-generate** (or press **Generate**).
