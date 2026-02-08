@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Speak → See</title>
+    <link rel="stylesheet" href="/static/app.css" />
+  </head>
+  <body>
+    <div class="app">
+      <header class="topbar">
+        <button id="micBtn" class="btn btn-mic" title="Space: talk">
+          <span class="icon" aria-hidden="true">🎙</span>
+          <span class="label" id="micLabel">Talk</span>
+        </button>
+
+        <label class="toggle" title="Auto listen: start/stop when you speak (recommended)">
+          <input id="autoListen" type="checkbox" checked />
+          <span class="toggle-pill">Auto listen</span>
+        </label>
+
+        <button id="genBtn" class="btn" title="Enter: generate">Generate</button>
+        <button id="regenBtn" class="btn" title="R: regenerate">Regenerate</button>
+        <button id="saveBtn" class="btn" title="S: save image">Save</button>
+
+        <div class="status">
+          <div class="status-line">
+            <span class="pill" id="phasePill">idle</span>
+            <span id="statusText"></span>
+          </div>
+          <div class="status-sub" id="modelText"></div>
+        </div>
+      </header>
+
+      <main class="main">
+        <section class="viewer">
+          <div class="image-frame" id="imageFrame">
+            <img id="mainImage" alt="" />
+            <div class="skeleton" id="skeleton">
+              <div class="shimmer"></div>
+            </div>
+            <div class="progress" id="progressWrap">
+              <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+              <div class="progress-text" id="progressText"></div>
+            </div>
+          </div>
+        </section>
+
+        <aside class="gallery">
+          <div class="gallery-title">Gallery</div>
+          <div id="galleryList" class="gallery-list"></div>
+        </aside>
+      </main>
+
+      <footer class="bottom">
+        <div class="live">
+          <div class="live-label">Live transcript</div>
+          <div class="live-text" id="liveText">…</div>
+          <div class="countdown" id="countdown"></div>
+        </div>
+
+        <div class="prompt">
+          <textarea id="promptBox" rows="3" placeholder="Your prompt (editable)…"></textarea>
+          <div class="hint">
+            Just open and speak. Shortcuts: Space talk · Enter generate · R regenerate · S save · Esc stop
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <div class="toast" id="toast"></div>
+    <div class="overlay" id="overlay" hidden>
+      <div class="overlay-card">
+        <div class="overlay-title">Microphone Access Needed</div>
+        <div class="overlay-body">
+          Allow microphone access for this page, then start speaking. No audio leaves your machine.
+        </div>
+        <button id="overlayBtn" class="btn">Enable microphone</button>
+      </div>
+    </div>
+
+    <script src="/static/audio.js"></script>
+    <script src="/static/app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,37 @@
+.DS_Store
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+.egg-info/
+*.egg-info/
+build/
+dist/
+.venv/
+
+# uv
+.uv/
+
+# App data (keep folders via .gitkeep)
+data/*
+!data/.gitkeep
+
+!data/gallery/
+data/gallery/*
+!data/gallery/.gitkeep
+
+!data/saved/
+data/saved/*
+!data/saved/.gitkeep
+
+!data/hf/
+data/hf/*
+!data/hf/.gitkeep
+
+!data/logs/
+data/logs/*
+!data/logs/.gitkeep
