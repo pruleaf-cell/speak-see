@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Speak → See</title>
+    <meta http-equiv="refresh" content="0; url=http://127.0.0.1:7860/" />
+    <style>
+      :root {
+        --bg0: #0b0c10;
+        --bg1: #10121a;
+        --panel: rgba(255, 255, 255, 0.06);
+        --text: rgba(255, 255, 255, 0.92);
+        --muted: rgba(255, 255, 255, 0.62);
+        --accent: #7cffb2;
+      }
+      * { box-sizing: border-box; }
+      html, body { height: 100%; }
+      body {
+        margin: 0;
+        background: radial-gradient(1200px 600px at 30% 10%, rgba(124,255,178,0.10), transparent 55%),
+                    radial-gradient(900px 500px at 80% 40%, rgba(255,85,102,0.08), transparent 60%),
+                    linear-gradient(180deg, var(--bg0), var(--bg1));
+        color: var(--text);
+        font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+        display: grid;
+        place-items: center;
+        padding: 18px;
+      }
+      .card {
+        width: min(720px, 100%);
+        background: var(--panel);
+        border: 1px solid rgba(255,255,255,0.10);
+        border-radius: 18px;
+        padding: 16px;
+      }
+      h1 { margin: 0; font-size: 18px; letter-spacing: 0.2px; }
+      p { margin: 10px 0 0; color: var(--muted); line-height: 1.45; }
+      a {
+        color: var(--accent);
+        font-weight: 800;
+        text-decoration: none;
+        border-bottom: 1px solid rgba(124,255,178,0.35);
+      }
+      .small { font-size: 12px; margin-top: 14px; color: rgba(255,255,255,0.55); }
+      code { color: rgba(255,255,255,0.9); }
+    </style>
+    <script>
+      // GitHub Pages is HTTPS. This app is fully local, so we redirect to the local server.
+      window.location.replace("http://127.0.0.1:7860/");
+    </script>
+  </head>
+  <body>
+    <div class="card">
+      <h1>Speak → See</h1>
+      <p>
+        Redirecting to the local app at
+        <a href="http://127.0.0.1:7860/">http://127.0.0.1:7860</a>.
+      </p>
+      <p class="small">
+        Fully local inference (Whisper + Stable Diffusion). If the local app isn't running yet, start it with
+        <code>bash ./run.sh</code> from the repo, then refresh.
+      </p>
+    </div>
+  </body>
+</html>
+
